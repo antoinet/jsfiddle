@@ -1,0 +1,8 @@
+name: Show spinner gif while handling XHR response
+description: Demonstrates how to display an animated spinner gif while loading the XHR response.
+authors:
+ - Antoine Neuenschwander
+resources:
+ - http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/5-0.gif
+
+
