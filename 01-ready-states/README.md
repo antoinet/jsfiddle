@@ -1,1 +1,1 @@
-http://jsfiddle.net/gh/get/library/pure/antoinet/jsfiddle/tree/master/01-ready-states/
+http://jsfiddle.net/gh/get/library/pure/antoinet/jsfiddle/tree/master/01-ready-states
