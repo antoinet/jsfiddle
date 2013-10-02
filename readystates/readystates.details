@@ -1,0 +1,5 @@
+name: XMLHttpRequest readyStates
+description: Demonstrates how the XMLHttpRequests transitions through all readyStates during a request.
+authors:
+ - Antoine Neuenschwander
+
