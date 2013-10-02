@@ -1,0 +1,5 @@
+name: Use an image tag to generate a request
+description: Demonstrates how an image tag may be manipulated to generate an HTTP GET request.
+authors:
+ - Antoine Neuenschwander
+
