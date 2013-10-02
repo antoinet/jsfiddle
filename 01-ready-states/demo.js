@@ -5,5 +5,5 @@ xhr.onreadystatechange = function () {
 	newListElement.appendChild(text);
 	document.getElementById('states').appendChild(newListElement);
 };
-xhr.open('POST', '/echo/xml');
+xhr.open('POST', '/echo/xml/');
 xhr.send();
