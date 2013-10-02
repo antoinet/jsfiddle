@@ -5,5 +5,6 @@ xhr.onreadystatechange = function () {
 	}
 };
 xhr.open('GET', '/gh/get/response.html/antoinet/jsfiddle/02-response-text/');
+xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 xhr.send();
 
