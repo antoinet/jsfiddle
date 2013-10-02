@@ -1,0 +1,5 @@
+name: Handle responseXML from an XMLHttpRequest
+description: Demonstrates how to handle the responseXML from an XMLHttpRequest.
+authors:
+ - Antoine Neuenschwander
+
