@@ -1,0 +1,5 @@
+name: Handle responseText from an XMLHttpRequest
+description: Demonstrates how to handle the responseText from an XMLHttpRequest.
+authors:
+ - Antoine Neuenschwander
+
