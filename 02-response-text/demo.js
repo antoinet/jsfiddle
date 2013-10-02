@@ -4,7 +4,7 @@ xhr.onreadystatechange = function () {
 		document.getElementById('text').innerHTML = xhr.responseText;
 	}
 };
-xhr.open('GET', '/gh/get/response.html/antoinet/jsfiddle/02-response-text/');
+xhr.open('GET', '/gh/get/response.html/antoinet/jsfiddle/tree/master/02-response-text/');
 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 xhr.send();
 
