@@ -1,0 +1,5 @@
+name: Use an iframe to generate a request
+description: Demonstrates how an iframe may be manipulated to generate an HTTP GET request.
+authors:
+ - Antoine Neuenschwander
+
