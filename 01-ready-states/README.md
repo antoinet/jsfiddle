@@ -1,1 +1,4 @@
+## XMLHttpRequest readyStates
+Demonstrates how the XMLHttpRequests transitions through all readyStates during a request.
+
 http://jsfiddle.net/gh/get/library/pure/antoinet/jsfiddle/tree/master/01-ready-states
