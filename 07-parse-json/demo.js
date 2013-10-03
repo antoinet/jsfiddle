@@ -2,7 +2,6 @@ xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function () {
 	if (xhr.readyState == 4 && xhr.status == 200) {
         employees = JSON.parse(xhr.responseText).employees;
-        alert(employees.length);
         for (var i = 0; i < employees.length; i++) {
             var li = document.createElement('li');
             var text = document.createTextNode(employees[i].firstName + ' ' + employees[i].lastName);
