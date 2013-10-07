@@ -1,5 +1,5 @@
-name: XMLHttpRequest readyStates
-description: Demonstrates how the XMLHttpRequests transitions through all readyStates during a request.
+name: Durchlauf der `XMLHttpRequest` Zustände anzeigen
+description: In dieser Übung soll der Durchlauf der `XMLHttpRequest` Zustände angezeigt werden.
 authors:
  - Antoine Neuenschwander
 
