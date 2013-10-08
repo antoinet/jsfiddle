@@ -1,13 +1,18 @@
 xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function () {
 	if (xhr.readyState == 4 && xhr.status == 200) {
-        employees = JSON.parse(xhr.responseText).employees;
-        for (var i = 0; i < employees.length; i++) {
-            var li = document.createElement('li');
-            var text = document.createTextNode(employees[i].firstName + ' ' + employees[i].lastName);
-            li.appendChild(text);
-            document.getElementById('employees').appendChild(li);
-        }
+          json = JSON.parse(xhr.responseText);
+
+          var h1 = document.createElement('h1');
+          var h1text = document.createTextNode(json.title);
+          h1.appendChild(h1text);
+	  document.getElementById('media').appendChild(h1);
+
+          var img = document.createElement('img');
+          var src = document.createAttribute('src');
+          src.value = json.items[0].media.m;
+          img.setAttributeNode(src);
+          document.getElementById('media').appendChild(img);
 	}
 };
 xhr.open('GET', '/gh/get/response.json/antoinet/jsfiddle/tree/master/07-parse-json/');
