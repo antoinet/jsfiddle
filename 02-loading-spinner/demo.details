@@ -1,5 +1,5 @@
-name: Show spinner gif while handling XHR response
-description: Demonstrates how to display an animated spinner gif while loading the XHR response.
+name: Anzeige eines Kreisels während des Ladezustands
+description: Während der Übertragung eines AJAX Aufrufs soll einen Kreisel angezeigt werden, um den Ladevorgang zu verdeutlichen.
 authors:
  - Antoine Neuenschwander
 resources:

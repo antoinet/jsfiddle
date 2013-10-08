@@ -3,10 +3,10 @@ xhr.onreadystatechange = function () {
 	if (xhr.readyState == 4 && xhr.status == 200) {
         var xmlDoc = xhr.responseXML;
         var html = "<ul>";
-        var cds = xmlDoc.getElementsByTagName("CD");
+        var cds = xmlDoc.getElementsByTagName("cd");
         for (i = 0; i < cds.length; i++) {
-            var title = cds[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
-            var artist = cds[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+            var title = cds[i].getElementsByTagName("title")[0].firstChild.nodeValue;
+            var artist = cds[i].getElementsByTagName("artist")[0].firstChild.nodeValue;
             html = html + '<li><i>' + title + '</i> by ' + artist + '</li>';
         }
         html += '</ul>';
