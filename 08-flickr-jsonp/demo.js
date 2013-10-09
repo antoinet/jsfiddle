@@ -1,6 +1,5 @@
 function jsonFlickrApi(json) {
-	console.log(json);
-	alert('done');	
+    document.getElementById('img1').src = json.sizes.size[3].source;
 }
 
 var script_element = document.createElement('script');
