@@ -1,0 +1,5 @@
+name: Use flickr API with JSONP
+description: Use JSONP to circumvent the Same-Origin Policy and call flickr API
+authors:
+ - Antoine Neuenschwander
+
