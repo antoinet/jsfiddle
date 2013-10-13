@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>09-autosuggest using jquery $.getJSON()</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript">
+		function autosuggest() {
+			// check if query is not empty
+			var query = $('#query');
+			if (!query.val()) return;
+
+			// make AJAX call to autosuggest.php?query=...
+			$.getJSON("autosuggest.php?query=" + query.val(), function (json) {
+				// add results to datalist
+				var datalist = $('#countries');
+				datalist.empty();
+				for (var i in json) {
+					datalist.append($('<option/>').attr('value', json[i]));
+				}
+			});
+		}
+		</script>
+	</head>
+	<body>
+		<h3>09-autosuggest using <a href="http://api.jquery.com/jQuery.getJSON/">jquery $.getJSON()</a></h3>
+		<p><i>Warning:</i> does not work with Safari!</p>
+		<input type="text" id="query" placeholder="Search..." list="countries" autocomplete="off" oninput="autosuggest()"/>
+		<datalist id="countries"></datalist>
+	</body>
+</html>
