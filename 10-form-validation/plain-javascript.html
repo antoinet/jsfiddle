@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>10-form-validation</title>
+		<script type="text/javascript">
+		function checkUserid() {
+			var userid = document.forms['registration'].elements['userid'].value;
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var result = JSON.parse(xhr.responseText);
+					var validationMessage = '';
+					if (result.found) {
+						validationMessage = 'userid already in use';
+					}
+					document.getElementById('validation-userid').innerHTML = validationMessage;
+				}
+			};
+			xhr.open('GET', 'check-userid.php?userid=' + userid);
+			xhr.send();
+		}
+		</script>
+		<style type="text/css">
+		.validation { color: red; font-weight: bold; }
+		</style>
+	</head>
+	<body>
+		<h3>10 Form Validation</h3>
+		<form id="registration" onsubmit="return false;" action="#">
+			<table>
+				<tr>
+					<td><label for="userid">UserID</label></td>
+					<td><input type="text" name="userid" autocomplete="off" autofocus required onblur="checkUserid()"/></td>
+					<td><span class="validation" id="validation-userid"/></td>
+				</tr>
+				<tr>
+					<td><label for="first-name">First Name</label></td>
+					<td><input type="text" name="first-name" autocomplete="off"/></td>
+					<td><span id="validation-first-name"/></td>
+				</tr>
+				<tr>
+					<td><label for="last-name">Last Name</label></td>
+					<td><input type="text" name="last-name" autocomplete="off"/></td>
+					<td><span id="validation-last-name"/></td>
+				</tr>
+				<tr>
+					<td><label for="email">Email</label></td>
+					<td><input type="email" name="email" autocomplete="off"/></td>
+					<td><span id="validation-email"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Register"/></td>
+					<td></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
