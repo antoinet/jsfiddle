@@ -5,9 +5,14 @@
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript">
 		function autosuggest() {
+			var datalist = $('#countries');
+			
 			// check if query is not empty
 			var query = $('#query');
-			if (!query.val()) return;
+			if (!query.val()) {
+				datalist.empty();
+				return;
+			}
 
 			// make AJAX call to autosuggest.php?query=...
 			$.ajax({
@@ -17,7 +22,6 @@
 				dataType: "json"
 			}).done(function (json) {
 				// add results to datalist
-				var datalist = $('#countries');
 				datalist.empty();
 				$.each(json, function(key, val) {
 					datalist.append($('<option/>').attr('value', val));
@@ -29,7 +33,7 @@
 	<body>
 		<h3>09-autosuggest using <a href="http://api.jquery.com/jQuery.ajax/">jquery $.ajax()</a></h3>
 		<p><i>Warning:</i> does not work with Safari!</p>
-		<input type="text" id="query" placeholder="Search..." list="countries" autocomplete="off" oninput="autosuggest()"/>
+		<input type="text" id="query" placeholder="Search..." list="countries" autocomplete="off" oninput="autosuggest()" autofocus/>
 		<datalist id="countries"></datalist>
 	</body>
 </html>

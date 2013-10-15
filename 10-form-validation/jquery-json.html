@@ -2,27 +2,21 @@
 <html>
 	<head>
 		<title>10-form-validation</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript">
 		function checkUserid() {
 			// 1. read userid value from field
 			var userid = document.forms['registration'].elements['userid'].value;
 			
 			// 2. check userid on server
-			var xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState == 4 && xhr.status == 200) {
-					var result = JSON.parse(xhr.responseText);
-					
-					// 3. set validation message according to server response
-					var validationMessage = '';
-					if (result.found) {
-						validationMessage = 'userid already in use';
-					}
-					document.getElementById('validation-userid').innerHTML = validationMessage;
+			$.getJSON("check-userid.php?userid=" + userid, function(json) {
+				// 3. set validation message according to server response
+				var validationMessage = '';
+				if (result.found) {
+					validationMessage = 'userid already in use';
 				}
-			};
-			xhr.open('GET', 'check-userid.php?userid=' + userid);
-			xhr.send();
+				document.getElementById('validation-userid').innerHTML = validationMessage;
+			});
 		}
 		</script>
 		<style type="text/css">

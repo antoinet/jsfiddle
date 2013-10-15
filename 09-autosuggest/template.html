@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>09-autosuggest in plain javascript</title>
+		<!-- uncomment next line to enable jquery -->
+		<!--script src="http://code.jquery.com/jquery-1.10.1.min.js"></script-->
 		<script type="text/javascript">
 		function autosuggest() {
 			// 1. check if query is not empty
@@ -22,7 +24,7 @@
 		<p><i>Warning:</i> does not work with Safari!</p>
 		<input type="text" id="query" placeholder="Search..." list="countries" autocomplete="off" oninput="autosuggest()" autofocus/>
 		<datalist id="countries">
-			<!-- TODO: delete example values -->
+			<!-- TODO: delete sample values -->
 			<option value="France"></option>
 			<option value="Switzerland"></option>
 			<option value="Italy"></option>
