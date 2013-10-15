@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>09-autosuggest in plain javascript</title>
+		<script type="text/javascript">
+		function autosuggest() {
+			// 1. check if query is not empty
+			
+			// 2. make AJAX call to autosuggest.php?query=...
+			
+			// 3. empty the datalist
+			
+			// 4. parse suggestions from JSON response
+			
+			// 5. add results to datalist
+			
+		}
+		</script>
+	</head>
+	<body>
+		<h3>09-autosuggest in plain javascript</h3>
+		<p><i>Warning:</i> does not work with Safari!</p>
+		<input type="text" id="query" placeholder="Search..." list="countries" autocomplete="off" oninput="autosuggest()" autofocus/>
+		<datalist id="countries">
+			<!-- TODO: delete example values -->
+			<option value="France"></option>
+			<option value="Switzerland"></option>
+			<option value="Italy"></option>
+			<option value="Germany"></option>
+			<option value="Austria"></option>
+			<option value="Liechtenstein"></option>
+		</datalist>
+	</body>
+</html>
