@@ -12,7 +12,7 @@
 			$.getJSON("check-userid.php?userid=" + userid, function(json) {
 				// 3. set validation message according to server response
 				var validationMessage = '';
-				if (result.found) {
+				if (json.found) {
 					validationMessage = 'userid already in use';
 				}
 				document.getElementById('validation-userid').innerHTML = validationMessage;
