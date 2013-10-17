@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>11-bonus</title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript">
+		function styleText() {
+			var mytext = $('input[name=mytext]').val();
+			
+			var url = "style.php?text=" + mytext;
+			if ($('input[name=bold]').is(':checked')) {
+				url += "&style[bold]";
+			}
+			if ($('input[name=italic]').is(':checked')) {
+				url += "&style[italic]";
+			}
+			if ($('input[name=underline]').is(':checked')) {
+				url += "&style[underline]";
+			}
+			if ($('input[name=invert]').is(':checked')) {
+				url += "&style[invert]";
+			}
+			
+			$.ajax({type: "GET", url: url}).done(function (html) {
+				$('#output').html(html);
+			});
+		}
+	</script>
+ </head>
+ <body>
+	
+	<form id="myform">
+		<input type="text" name="mytext" oninput="styleText()"/>
+		<input type="checkbox" name="bold" onchange="styleText()">bold
+		<input type="checkbox" name="italic" onchange="styleText()">italic
+		<input type="checkbox" name="underline" onchange="styleText()">underline
+		<input type="checkbox" name="invert" onchange="styleText()">invert
+	</form>
+	
+	<div id="output" style="border: 1px solid black; width: 350px; height: 70px; margin-top: 15px; padding: 20px;"></div>
+ </body>
+</html>

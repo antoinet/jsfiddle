@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>11-bonus</title>
+	<script type="text/javascript">
+		function styleText() {
+			var myform = document.forms['myform'];
+			var mytext = myform.elements['mytext'].value;
+			
+			var url = "style.php?text=" + mytext;
+			if (myform.elements['bold'].checked) {
+				url += "&style[bold]";
+			}
+			if (myform.elements['italic'].checked) {
+				url += "&style[italic]";
+			}
+			if (myform.elements['underline'].checked) {
+				url += "&style[underline]";
+			}
+			if (myform.elements['invert'].checked) {
+				url += "&style[invert]";
+			}
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					var html = xhr.responseText;
+					document.getElementById('output').innerHTML = html;
+				}
+			}
+			xhr.open('GET', url);
+			xhr.send();
+		}
+	</script>
+ </head>
+ <body>
+	
+	<form id="myform">
+		<input type="text" name="mytext" oninput="styleText()"/>
+		<input type="checkbox" name="bold" onchange="styleText()">bold
+		<input type="checkbox" name="italic" onchange="styleText()">italic
+		<input type="checkbox" name="underline" onchange="styleText()">underline
+		<input type="checkbox" name="invert" onchange="styleText()">invert
+	</form>
+	
+	<div id="output" style="border: 1px solid black; width: 350px; height: 70px; margin-top: 15px; padding: 20px;"></div>
+ </body>
+</html>
