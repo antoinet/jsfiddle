@@ -11,7 +11,7 @@
 			// eingabe (plain DOM)
 			var mytext = myform.elements['mytext'].value;
 			// eingabe (jQuery)
-			var mytext = $('myform[name=mytext]').val();
+			var mytext = $('input[name=mytext]').val();
 			
 			
 			// zugriff auf checkboxes (plain DOM)
@@ -19,7 +19,7 @@
 				// ...
 			}
 			// zugriff auf checkboxes (jQuery)
-			if ($('myform[name=bold]').is(':checked')) {
+			if ($('input[name=bold]').is(':checked')) {
 				// ...
 			}
 			
